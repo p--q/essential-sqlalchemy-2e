@@ -1,18 +1,18 @@
 import unittest
 from decimal import Decimal
 
-from unittest import mock
+import mock
 
 from app import get_orders_by_customer
 
 
 class TestApp(unittest.TestCase):
-    cookie_orders = [(1, 'cookiemon', '111-111-1111')]
+    cookie_orders = [(1, u'cookiemon', u'111-111-1111')]
     cookie_details = [
-        (1, 'cookiemon', '111-111-1111',
-            'dark chocolate chip', 2, Decimal('1.00')),
-        (1, 'cookiemon', '111-111-1111',
-            'oatmeal raisin', 12, Decimal('3.00'))]
+        (1, u'cookiemon', u'111-111-1111',
+            u'dark chocolate chip', 2, Decimal('1.00')),
+        (1, u'cookiemon', u'111-111-1111',
+            u'oatmeal raisin', 12, Decimal('3.00'))]
 
     @mock.patch('app.dal.session')
     def test_orders_by_customer_blank(self, mock_dal):
